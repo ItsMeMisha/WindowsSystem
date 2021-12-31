@@ -3,10 +3,17 @@
 
 //==============================================================================
 
+#include "../Window/Window.hpp"
+
 class Engine {
  public:
-
+  static void start();
+  static void init();
+  static void destroy();
  private:
+  Engine();
+
+  static Window rootWindow;
 };
 
 //==============================================================================
