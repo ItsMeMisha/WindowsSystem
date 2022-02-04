@@ -4,13 +4,17 @@
 //==============================================================================
 
 #include "../Shape/Shape.hpp"
+#include <list>
 
 class Window {
  public:
+  void render(const RendererBridge& renderer) const;
+  void addSubwindow(Window* wd);
 
  protected:
   Shape* shape = nullptr;
-
+  std::list<Window*> subwindows;
+  Window* parentWd = nullptr;
 };
 
 //==============================================================================

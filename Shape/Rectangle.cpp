@@ -1,7 +1,8 @@
 #include "Rectangle.hpp"
 
 void Rectangle::render(const RendererBridge& renderer) const {
-  renderer.renderRectangle(position, size, color);
+  if (visible)
+    renderer.renderRectangle(position, size, color);
 }
 
 bool Rectangle::containsPoint(const Point& point) const {

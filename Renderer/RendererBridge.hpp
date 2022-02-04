@@ -4,12 +4,15 @@
 //==============================================================================
 
 #include "../Window/Window.hpp"
+#include "../Utility/Point.hpp"
+#include "../Utility/Color.hpp"
 
 class RendererBridge {
  public:
   virtual void renderWindow(const Window* window);
   static RendererBridge* init(); 
 
+  virtual void renderRectangle(const Point& pos, const Point& size, const Color& color) const;
  protected:
 
  private:
