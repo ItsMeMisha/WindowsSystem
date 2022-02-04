@@ -11,7 +11,9 @@ class Shape {
  public:
   virtual void render(const RendererBridge& renderer) const;
   virtual bool containsPoint(const Point& point) const;
-  void setPosition(const Point& position);
+  void makeInvisible();
+  void makeVisible();
+  void setPosition(const Point& pos);
   Point getPosition() const;
  protected:
   Point position;

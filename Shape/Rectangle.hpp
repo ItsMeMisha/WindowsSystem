@@ -9,7 +9,7 @@ class Rectangle : public Shape {
   public:
     void render(const RendererBridge& renderer) const override;
     bool containsPoint(const Point& point) const override;
-    void setSize(const Point& size);
+    void setSize(const Point& sz);
     Point getSize() const;
   protected:
     Point size;
