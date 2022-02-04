@@ -5,6 +5,7 @@
 
 #include "../Renderer/RendererBridge.hpp"
 #include "../Utility/Point.hpp"
+#include "../Utility/Color.hpp"
 
 class Shape {
 
@@ -15,9 +16,12 @@ class Shape {
   void makeVisible();
   void setPosition(const Point& pos);
   Point getPosition() const;
+  void setColor(const Color& clr);
+  Color getColor() const;
  protected:
   Point position;
   bool visible = true;
+  Color color;
 };
 
 //==============================================================================
