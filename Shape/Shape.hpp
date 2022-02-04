@@ -4,16 +4,18 @@
 //==============================================================================
 
 #include "../Renderer/RendererBridge.hpp"
-
-#include <utility>
-using Position = std::pair<std::size_t, std::size_t>;
+#include "../Utility/Point.hpp"
 
 class Shape {
 
  public:
   virtual void render(const RendererBridge& renderer) const;
+  virtual bool containsPoint(const Point& point) const;
+  void setPosition(const Point& position);
+  Point getPosition() const;
  protected:
-  Position pos;
+  Point position;
+  bool visible = true;
 };
 
 //==============================================================================
