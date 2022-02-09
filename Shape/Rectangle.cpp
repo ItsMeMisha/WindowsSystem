@@ -13,10 +13,10 @@ bool Rectangle::containsPoint(const Point& point) const {
   return false;
 }
 
-void Rectangle::setSize(const Point& sz) {
+void Rectangle::setSize(const Size& sz) {
   size = sz;
 }
 
-Point Rectangle::getSize() const {
+Rectangle::Size Rectangle::getSize() const {
   return size;
 }

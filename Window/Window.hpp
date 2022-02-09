@@ -10,10 +10,11 @@ class Window {
  public:
   void render(const RendererBridge& renderer) const;
   void addSubwindow(Window* wd);
-
+  std::list<Window*> subwindows;
+  const Shape& getShape() const;
  protected:
   Shape* shape = nullptr;
-  std::list<Window*> subwindows;
+
   Window* parentWd = nullptr;
 };
 

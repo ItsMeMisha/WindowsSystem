@@ -9,14 +9,15 @@
 
 class RendererBridge {
  public:
-  virtual void renderWindow(const Window* window);
+  virtual void renderRootWindow(const Window* rootWindow);
+ // virtual void renderWindow(const Window* window);
   static RendererBridge* init(); 
 
   virtual void renderRectangle(const Point& pos, const Point& size, const Color& color) const;
  protected:
-
- private:
   RendererBridge();
+
+  Window* rootWindow;
 };
 
 //==============================================================================

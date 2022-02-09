@@ -8,3 +8,7 @@ void Window::addSubwindow(Window* wd) {
   wd->parentWd = this;
   subwindows.push_back(wd);
 }
+
+Shape& Window::getShape() {
+  return *shape;
+}
