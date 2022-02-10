@@ -18,3 +18,7 @@ const Shape& Window::getShape() const{
 void Window::setShape(Shape* shp) {
   shape = shp;
 }
+
+bool Window::isOpen() const {
+  return isOpenFlag;
+}

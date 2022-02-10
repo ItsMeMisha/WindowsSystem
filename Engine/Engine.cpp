@@ -3,10 +3,11 @@
 RendererBridge* Engine::renderer = nullptr;
 Window* Engine::rootWindow = nullptr;
 
-#include <cstdio>
 void Engine::start() {
-  while(true)
+  while(rootWindow->isOpen()) {
     rootWindow->render(*renderer);
+    renderer->renderResult();
+  }
 }
 
 void Engine::init(RendererBridge& rend, Window& rootWind) {

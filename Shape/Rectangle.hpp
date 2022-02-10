@@ -10,7 +10,7 @@ class Rectangle : public Shape {
     void render(RendererBridge& renderer) const override;
     bool containsPoint(const Point& point) const override;
 
-    Rectangle(const Point& pos, const Size& sz);
+    Rectangle(const Point& pos, const Size& sz, const Color& clr = Color());
     Rectangle() = default;
     ~Rectangle() = default;
   protected:

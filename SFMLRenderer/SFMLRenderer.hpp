@@ -13,7 +13,7 @@ class SFMLRenderer : public RendererBridge {
   static SFMLRenderer& getRenderer(const Point& size, const char* appName);
  // void renderWindow(const Window* window) override;
   void renderRectangle(const Point& pos, const Point& size, const Color& color) override;
-//  void renderRootWindow(const Window* rootWindow) override;
+  void renderResult() override;
 
 
  private:

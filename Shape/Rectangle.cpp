@@ -13,7 +13,8 @@ bool Rectangle::containsPoint(const Point& point) const {
   return false;
 }
 
-Rectangle::Rectangle(const Point& pos, const Size& sz) {
+Rectangle::Rectangle(const Point& pos, const Size& sz, const Color& clr) {
   setPosition(pos);
   setSize(sz);
+  setColor(clr);
 }

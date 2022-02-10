@@ -15,10 +15,13 @@ class Window {
   std::list<Window*> subwindows;
   const Shape& getShape() const;
   void setShape(Shape* shp);
+  bool isOpen() const;
  protected:
   Shape* shape = nullptr;
 
   Window* parentWd = nullptr;
+
+  bool isOpenFlag = true;
 };
 
 //==============================================================================
