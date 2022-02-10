@@ -10,6 +10,7 @@ struct Color {
     r(r), g(g), b(b) {}
 
   Color(const Color& clr) = default;
+  Color() = default;
   uint8_t r = 0;
   uint8_t g = 0;
   uint8_t b = 0;

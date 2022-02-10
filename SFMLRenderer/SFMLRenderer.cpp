@@ -1,21 +1,34 @@
 #include "SFMLRenderer.hpp"
+
+SFMLRenderer* SFMLRenderer::renderer = nullptr;
+
+SFMLRenderer& SFMLRenderer::getRenderer(const Point& size, const char* appName) {
+  if (renderer == nullptr)
+    renderer = new SFMLRenderer(size, appName);
+  return *renderer;
+}
+
 /*
 void SFMLRenderer::renderWindow(const Window* window) {
 
 }
 */
-void SFMLRenderer::renderRectangle(const Point& pos, const Point& size, const Color& color) const {
+void SFMLRenderer::renderRectangle(const Point& pos, const Point& size, const Color& color) {
+  sf::RectangleShape rect;
+  rect.setPosition(pos.x, pos.y);
+  rect.setSize({(float)size.x, (float)size.y});
+  rect.setFillColor({color.r, color.g, color.b});
+  rootWin.draw(rect);
 
+  rootWin.display(); //BADBADBADBAD!
 }
 
-void SFMLRenderer::renderRootWindow(const Window* rootWindow) {
+/*void SFMLRenderer::renderRootWindow(const Window* rootWindow) {
   for (auto& wind : rootWindow->subwindows)
     wind->render(*this);
 
   rootWin.display();
-}
+}*/
 
-SFMLRenderer::SFMLRenderer(const Window* rootWindow, const char* appName) : 
-  rootWin(sf::RenderWindow(sf::VideoMode(rootWindow->getShape().getSize().x,
-                                         rootWindow->getShape().getSize().y),
-                                         appName)) {}
+SFMLRenderer::SFMLRenderer(const Point& size, const char* appName) : 
+  rootWin(sf::RenderWindow(sf::VideoMode(size.x, size.y), appName)) {}

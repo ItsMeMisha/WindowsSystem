@@ -9,13 +9,18 @@
 
 class SFMLRenderer : public RendererBridge {
  public:
+  //~SFMLRenderer() = default;
+  static SFMLRenderer& getRenderer(const Point& size, const char* appName);
  // void renderWindow(const Window* window) override;
-  void renderRectangle(const Point& pos, const Point& size, const Color& color) const override;
-  void renderRootWindow(const Window* rootWindow) override;
+  void renderRectangle(const Point& pos, const Point& size, const Color& color) override;
+//  void renderRootWindow(const Window* rootWindow) override;
+
 
  private:
+  static SFMLRenderer* renderer;
   sf::RenderWindow rootWin;
-  SFMLRenderer(const Window* rootWindow, const char* appName);
+  SFMLRenderer(const Point& size, const char* appName);
+  SFMLRenderer(const SFMLRenderer&) = delete;
 };
 
 //==============================================================================

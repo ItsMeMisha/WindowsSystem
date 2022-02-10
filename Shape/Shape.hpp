@@ -10,10 +10,12 @@
 class Shape {
 
  public:
+  virtual ~Shape() = default;
+  Shape() = default;
   using Size = Point;
 
-  virtual void render(const RendererBridge& renderer) const;
-  virtual bool containsPoint(const Point& point) const;
+  virtual void render(RendererBridge& renderer) const = 0;
+  virtual bool containsPoint(const Point& point) const = 0;
   void makeInvisible();
   void makeVisible();
   void setPosition(const Point& pos);

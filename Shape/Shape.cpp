@@ -23,3 +23,11 @@ void Shape::setColor(const Color& clr) {
 Color Shape::getColor() const {
   return color;
 }
+
+void Shape::setSize(const Size& sz) {
+  size = sz;
+}
+
+Shape::Size Shape::getSize() const {
+  return size;
+}

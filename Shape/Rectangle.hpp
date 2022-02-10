@@ -7,12 +7,13 @@
 
 class Rectangle : public Shape {
   public:
-    void render(const RendererBridge& renderer) const override;
+    void render(RendererBridge& renderer) const override;
     bool containsPoint(const Point& point) const override;
-    void setSize(const Size& sz);
-    Size getSize() const;
+
+    Rectangle(const Point& pos, const Size& sz);
+    Rectangle() = default;
+    ~Rectangle() = default;
   protected:
-    Size size;
 };
 
 //==============================================================================

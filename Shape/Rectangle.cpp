@@ -1,6 +1,6 @@
 #include "Rectangle.hpp"
 
-void Rectangle::render(const RendererBridge& renderer) const {
+void Rectangle::render(RendererBridge& renderer) const {
   if (visible)
     renderer.renderRectangle(position, size, color);
 }
@@ -13,10 +13,7 @@ bool Rectangle::containsPoint(const Point& point) const {
   return false;
 }
 
-void Rectangle::setSize(const Size& sz) {
-  size = sz;
-}
-
-Rectangle::Size Rectangle::getSize() const {
-  return size;
+Rectangle::Rectangle(const Point& pos, const Size& sz) {
+  setPosition(pos);
+  setSize(sz);
 }

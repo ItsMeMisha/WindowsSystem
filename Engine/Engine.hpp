@@ -8,12 +8,12 @@
 class Engine {
  public:
   static void start();
-  static void init();
+  static void init(RendererBridge& rend, Window& rootWind);
   static void destroy();
  private:
   Engine();
-
-  static Window rootWindow;
+  static RendererBridge* renderer;
+  static Window* rootWindow;
 };
 
 //==============================================================================

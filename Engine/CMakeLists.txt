@@ -4,6 +4,8 @@ set(INCDIR ${PROJECT_SOURCE_DIR}/Engine)
 
 target_sources(Engine
   PUBLIC
-    ${INCDIR}/Engine.hpp)
+    ${INCDIR}/Engine.hpp
+  PRIVATE
+    Engine.cpp)
 
 target_link_libraries(Engine PUBLIC Window)
