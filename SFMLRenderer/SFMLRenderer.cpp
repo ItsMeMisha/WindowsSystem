@@ -25,5 +25,9 @@ void SFMLRenderer::renderResult() {
   rootWin.display();
 }
 
+void SFMLRenderer::clear() {
+  rootWin.clear();
+}
+
 SFMLRenderer::SFMLRenderer(const Point& size, const char* appName) : 
   rootWin(sf::RenderWindow(sf::VideoMode(size.x, size.y), appName)) {}

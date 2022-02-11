@@ -10,12 +10,13 @@ class Window {
  public:
   virtual ~Window() = default;
 
-  void render(RendererBridge& renderer) const;
+  void render(RendererBridge& renderer);
   void addSubwindow(Window* wd);
-  std::list<Window*> subwindows;
   const Shape& getShape() const;
   void setShape(Shape* shp);
   bool isOpen() const;
+
+  std::list<Window*> subwindows;
  protected:
   Shape* shape = nullptr;
 

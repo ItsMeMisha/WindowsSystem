@@ -11,6 +11,7 @@ class RendererBridge {
  public:
   virtual ~RendererBridge() = default;
   virtual void renderResult() = 0;
+  virtual void clear() = 0;
  // virtual void renderWindow(const Window* window);
   //static RendererBridge* init(); 
 

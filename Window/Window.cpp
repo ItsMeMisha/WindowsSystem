@@ -1,8 +1,9 @@
 #include "Window.hpp"
 
-void Window::render(RendererBridge& renderer) const {
+void Window::render(RendererBridge& renderer) {
   for(auto& winds : subwindows)
     winds->render(renderer);
+
   shape->render(renderer);
 }
 

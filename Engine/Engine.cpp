@@ -5,6 +5,7 @@ Window* Engine::rootWindow = nullptr;
 
 void Engine::start() {
   while(rootWindow->isOpen()) {
+    renderer->clear();
     rootWindow->render(*renderer);
     renderer->renderResult();
   }
