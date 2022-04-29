@@ -14,9 +14,21 @@ class RendererBridge {
   virtual void clear() = 0;
  // virtual void renderWindow(const Window* window);
   //static RendererBridge* init(); 
+  virtual void start();
+  virtual void stop();
 
-  virtual void renderRectangle(const Point& pos, const Point& size, const Color& color) = 0;
+  virtual void renderLine(const Point& start, const Point& finish);
+  virtual void renderRectangle(const Point& pos, const Vector2d& size, const Color& color);
+  virtual void renderBox(const Point& pos, const Vector2d& size);
+  virtual void renderText(const std::string& text, const Vector2d& pos, size_t size);
+  virtual void renderTexture(const Point& pos, const char* image_name);    
+  virtual void renderTexture(const Point& pos, const sf::Texture& sf_texture);
+  virtual void renderBitmap(const vector<uint8_t>& image, const Point& pos, const Vector2d& size);
+
+  virtual void pushTarget(const Vector2d& size, const Vector2d& offset);
+  virtual void popTargetToDisplay(const Point& pos);
  protected:
+ 
  
 
 //  Window* rootWindow;

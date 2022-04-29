@@ -23,3 +23,13 @@ void Window::setShape(Shape* shp) {
 bool Window::isOpen() const {
   return isOpenFlag;
 }
+
+void Window::handleEvent(const Event* event) {
+  if (event == nullptr) {
+    return;
+  }
+
+  for (auto subwin : subwindows) {
+    subwin->handleEvent(event);
+  }
+}

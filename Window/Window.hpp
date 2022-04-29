@@ -4,6 +4,7 @@
 //==============================================================================
 
 #include "../Shape/Shape.hpp"
+#include "../Events/Event.hpp"
 #include <list>
 
 class Window {
@@ -15,6 +16,7 @@ class Window {
   const Shape& getShape() const;
   void setShape(Shape* shp);
   bool isOpen() const;
+  virtual void handleEvent(const Event* event);
 
   std::list<Window*> subwindows;
  protected:

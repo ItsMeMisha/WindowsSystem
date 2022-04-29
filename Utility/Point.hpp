@@ -8,6 +8,13 @@ struct Point {
   unsigned int y = 0;
 };
 
+using Vector2d = Point;
+
+struct Vector2f {
+  float x = 0;
+  float y = 0;
+};
+
 //==============================================================================
 
 #endif //__POINT_HPP__
